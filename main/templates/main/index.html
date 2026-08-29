@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+</head>
+
+<body>
+    <p>{{ content }}</p>
+    <br><br>
+    <p> Айди пользователя: {{ id }}</p>
+
+    <p>{{ list.0}} {{list.1}} {{list.2}}</p>
+    <p>{{ dict.key }}</p>
+    {% if name|length < 5%}
+        <p>Слишком короткое имя</p>
+    {%else%}
+        <p> Имя пользователя: {{ name }}</p>
+    {% endif%}
+</body>
+
+</html>
