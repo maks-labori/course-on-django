@@ -1,3 +1,4 @@
+import dis
 from re import VERBOSE
 
 from django.core.validators import MaxValueValidator, MinValueValidator
@@ -36,3 +37,11 @@ class Products(models.Model):
         
     def __str__(self):
         return self.name
+    
+    def price_after_discount(self):
+        if self.discount != 0:
+            return f"{(float(self.price) * (1 - self.discount * 0.01)):.2f}"
+        return self.price
+
+    def display_id(self):
+        return f"{self.id:05}"
